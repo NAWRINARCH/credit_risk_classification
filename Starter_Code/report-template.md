@@ -1,27 +1,45 @@
-# Module 12 Report Template
-
 ## Overview of the Analysis
 
-In this section, describe the analysis you completed for the machine learning models used in this Challenge. This might include:
+The purpose of this analysis was to evaluate the performance of a machine learning model (specifically, Logistic Regression) to predict whether a loan is high-risk (1) or healthy (0). The financial data provided includes information on loan applications, where the goal was to classify each loan as either high-risk or healthy based on various features.
 
-* Explain the purpose of the analysis.
-* Explain what financial information the data was on, and what you needed to predict.
-* Provide basic information about the variables you were trying to predict (e.g., `value_counts`).
-* Describe the stages of the machine learning process you went through as part of this analysis.
-* Briefly touch on any methods you used (e.g., `LogisticRegression`, or any other algorithms).
+The target variable in this analysis was a binary classification where:
+
+0 represents healthy loans
+1 represents high-risk loans
+The machine learning process included several stages:
+
+Data Preprocessing – Cleaning the data, handling missing values, and splitting the dataset into training and testing sets.
+Model Selection – Using Logistic Regression, a commonly used algorithm for binary classification problems.
+Model Training and Evaluation – Training the model using the training set, followed by evaluating its performance on the testing set using metrics such as accuracy, precision, recall, and F1-score.
+Variables:
+Target Variable: loan_status (where 0 = healthy loan and 1 = high-risk loan)
+Features: Various attributes related to loan applications (e.g., income, credit score, loan amount, etc.)
 
 ## Results
 
-Using bulleted lists, describe the accuracy scores and the precision and recall scores of all machine learning models.
+The following results summarize the performance of the Logistic Regression model:
 
-* Machine Learning Model 1:
-    * Description of Model 1 Accuracy, Precision, and Recall scores.
+Machine Learning Model: Logistic Regression
+Accuracy: 99.39%
+Precision (for 0): 1.00
+Recall (for 0): 1.00
+F1-Score (for 0): 1.00
+Precision (for 1): 0.87
+Recall (for 1): 0.95
+F1-Score (for 1): 0.91
+Macro Average Precision: 0.94
+Macro Average Recall: 0.97
+Macro Average F1-Score: 0.95
+Weighted Average Precision: 0.99
+Weighted Average Recall: 0.99
+Weighted Average F1-Score: 0.99
 
 ## Summary
 
-Summarize the results of the machine learning models, and include a recommendation on the model to use, if any. For example:
+The Logistic Regression model performs very well in predicting healthy loans (0) with perfect precision and recall. However, its performance on predicting high-risk loans (1) is slightly less perfect but still strong, with a precision of 87% and recall of 95%. The overall accuracy is very high at 99.39%, and the model shows strong weighted and macro averages for both precision and recall.
 
-* Which one seems to perform best? How do you know it performs best?
-* Does performance depend on the problem we are trying to solve? (For example, is it more important to predict the `1`'s, or predict the `0`'s? )
+Recommendation:
 
-If you do not recommend any of the models, please justify your reasoning.
+Model Choice: The Logistic Regression model appears to be a good choice for this task, as it delivers high accuracy and performs well in distinguishing between healthy and high-risk loans. The perfect prediction of healthy loans and the solid performance on high-risk loans makes it a reliable model.
+Considerations: The model's slightly lower precision for predicting high-risk loans suggests that it may occasionally misclassify some healthy loans as high-risk. However, given the high recall for high-risk loans, this might be an acceptable trade-off in many financial scenarios where detecting high-risk loans is crucial.
+In conclusion, the Logistic Regression model seems to perform best overall, and its strong recall for high-risk loans makes it an excellent choice for applications where minimizing the risk of overlooking high-risk loans is a priority.
